@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+}
+
+section{
+    height: 100%;
+    background-color: #e2e0e0;
+    padding: 20px;
+}
+
+h1{
+    text-align: center;
+}
+
+.theme_card{
+    position: relative;
+    width: 80%;
+    padding: 10px 10px 40px 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #333;
+    margin: 0 auto;
+}
+
+.theme_card button{
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+ul{
+    padding: 0;
+}
+
+.key_visual img{
+    width: 450px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.slick-prev {
+    left: 30px;
+}
+
+.slick-next {
+    right: 30px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: #000;
+}

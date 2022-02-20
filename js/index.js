@@ -2,21 +2,24 @@
 const quizList = [
     {
         // ラジオボタン
-        question:'「蒸気船ウィリー」でデビューしたのは？',
-        answer:['ミッキー','プーさん','ジー二―','スティッチ'],
-        correct:'ミッキー'
+        question:'サウナは何語？',
+        answer:['ロシア語','英語','フィンランド語','フランス語'],
+        type:'radio',
+        correct:'フィンランド語'
     },
     {
         // 記述式
-        question:'「アースラ」が出てくる物語のプリンセスは？',
+        question:'赤く焼けた石の上に水をかけ蒸気を発生させるフィンランドの伝統的なサウナの方法を何という？',
         answer:'',
-        correct:'アリエル'
+        type:'write',
+        correct:'ロウリュ'
     },
     {
         // チェックボックス
-        question:'山寺宏一さんが吹替をしているキャラクターは？',
-        answer:['カジモド','野獣','ドナルドダック','ニック'],
-
+        question:'サウナが好きなキャラクターは？※複数回答',
+        answer:['碧棺左馬刻','ミッキー','キティ','ムーミン'],
+        type:'check',
+        correct:['碧棺左馬刻','キティ']
     }
 ];
 
@@ -31,16 +34,16 @@ function func_quiz_start(){
     let question_element = document.getElementById("quiz_question");
     let answer_element = document.getElementById("quiz_answer");
 
-    let radio_button = document.createElement("input");
-    radio_button.type = "radio";
-
     if(current_number<quizList.length){
         // 問題文を表示
         question_element.textContent = quizList[current_number].question;
+        // ラジオボタン追加
+        answer_element.innerHTML = '<label for=""><input type="radio" name="" id="">'+quizList[current_number].answer+'</label>';
         current_number++;
     }else{
         question_element.textContent = 'おわり';
     }
+
 }
 
 

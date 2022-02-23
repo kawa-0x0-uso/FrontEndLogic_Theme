@@ -33,17 +33,21 @@ quiz_start.addEventListener("click",func_quiz_start);
 function func_quiz_start(){
     let question_element = document.getElementById("quiz_question");
     let answer_element = document.getElementById("quiz_answer");
+    let answer_radio = '';
 
     if(current_number<quizList.length){
         // 問題文を表示
         question_element.textContent = quizList[current_number].question;
         // ラジオボタン追加
-        answer_element.innerHTML = '<label for=""><input type="radio" name="" id="">'+quizList[current_number].answer+'</label>';
+        for(var i in quizList[current_number].answer){
+            answer_radio += '<input type="radio" name="answer_radio" value="'+quizList[current_number].answer[i]+'" id="radio'+i+'"><label for="radio'+i+'">'+quizList[current_number].answer[i]+'</label><br>';
+        }
+        answer_element.innerHTML = answer_radio;
+
         current_number++;
     }else{
         question_element.textContent = 'おわり';
     }
-
 }
 
 

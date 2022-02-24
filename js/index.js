@@ -9,14 +9,14 @@ const quizList = [
     },
     {
         // 記述式
-        question:'赤く焼けた石の上に水をかけ蒸気を発生させるフィンランドの伝統的なサウナの方法を何という？',
+        question:'赤く焼けた石の上に水をかけ蒸気を発生させるフィンランドの伝統的なサウナの方法を何という？※まだ表示だけ',
         answer:'',
         type:'write',
         correct:'ロウリュ'
     },
     {
         // チェックボックス
-        question:'サウナが好きなキャラクターは？※複数回答',
+        question:'サウナが好きなキャラクターは？※複数回答※まだ表示だけ',
         answer:['碧棺左馬刻','ミッキー','キティ','ムーミン'],
         type:'check',
         correct:['碧棺左馬刻','キティ']
@@ -33,12 +33,14 @@ quiz_start.addEventListener("click",func_quiz_start);
 function func_quiz_start(){
     let question_element = document.getElementById("quiz_question");
     let answer_element = document.getElementById("quiz_answer");
+
     let answer_radio = '';
+    let score = 0;
 
     if(current_number<quizList.length){
         // 問題文を表示
         question_element.textContent = quizList[current_number].question;
-        // ラジオボタン追加
+        // 回答のラジオボタン追加
         for(var i in quizList[current_number].answer){
             answer_radio += '<input type="radio" name="answer_radio" value="'+quizList[current_number].answer[i]+'" id="radio'+i+'"><label for="radio'+i+'">'+quizList[current_number].answer[i]+'</label><br>';
         }
